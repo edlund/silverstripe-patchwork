@@ -52,6 +52,16 @@ class ScheduledJobTest extends FunctionalTest {
 		$this->assertInstanceOf('SuperTest', $superTest);
 	}
 	
+	public function testWhitelist() {
+		$remoteAddr = $_SERVER['REMOTE_ADDR'];
+		$_SERVER['REMOTE_ADDR'] = '1.1.1.1';
+		
+		$response = $this->get('dev/tasks/ScheduledJobTask');
+		$this->assertEquals(403, $response->getStatusCode());
+		
+		$_SERVER['REMOTE_ADDR'] = $remoteAddr;
+	}
+	
 }
 
 /**

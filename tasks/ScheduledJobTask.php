@@ -43,7 +43,7 @@ class ScheduledJobTask extends BuildTask {
 	public function run($request) {
 		if (!(php_sapi_name() === 'cli' || in_array($_SERVER['REMOTE_ADDR'],
 				$this->config()->allowed_ips))) {
-			return $this->httpError(403);
+			return Controller::curr()->httpError(403);
 		}
 		if (Member::currentUserID()) {
 			Member::currentUser()->logOut();
