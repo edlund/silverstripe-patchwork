@@ -71,10 +71,6 @@ class PageContentItem extends DataObject {
 		'MobileImage' => 'Image'
 	);
 	
-	private static $constraints = array(
-		'Page' => 'on delete cascade'
-	);
-	
 	private static $autoversioned = array(
 		'Page' => true
 	);
