@@ -74,29 +74,10 @@ You should now be ready to start the actual work on the project.
 patchwork provides a bunch of features which are very nice to have,
 you can find some simple example for the most interesting parts below.
 
-### Constraints for DataObjects.
-
-Constraints can be specified for has_one-relations for DataObjects.
-It is possible to use constraints for Versioned DataObjects too, provided
-that both sides of the relation are Versioned and that only the stages
-"Stage" and "Live" are used.
-
-		class PageWidget extends DataObject {
-			private static $db = array(
-				'Title' => 'Text',
-			);
-			private static $has_one = array(
-				'Page' => 'Page',
-			);
-			private static $constraints = array(
-				'Page' => 'on delete cascade'
-			);
-        }
-
 ### Automatic publishing and unpublishing for related Versioned DataObjects.
 
 Making sure that Versioned DataObjects connected to for example a Page
-through a has_one-relation are published and unpublished when their
+through a `has_one`-relation are published and unpublished when their
 referenced Page will usually require quite a bit of code. Autoversioned
 allows Versioned DataObjects sync their staging with their owner.
 

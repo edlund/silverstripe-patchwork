@@ -34,12 +34,7 @@ call_user_func(function () {
 	Member::lock_out_after_incorrect_logins(PATCHWORK_LOGIN_LIMIT);
 	
 	$database = SS_DATABASE_CLASS;
-	if ($database == 'PatchworkMySQLDatabase') {
-		$database::set_connection_charset('utf8');
-		DataObject::add_extension('Constraint');
-	} else {
-		trigger_error('constraints not available', E_USER_WARNING);
-	}
+	$database::set_connection_charset('utf8');
 	
 	if (class_exists('SiteTree')) {
 		if (!class_exists('Page')) {
