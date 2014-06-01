@@ -31,8 +31,12 @@
 
 abstract class Captcha extends Object {
 	
-	protected function getSessionKey($postfix) {
-		return 'patchwork_' . get_class($this) . "_$postfix";
+	public static function get_session_key($postfix, $class = null) {
+		if (is_object($class))
+			$class = get_class($class);
+		if (!is_string($class))
+			throw new Exception('$class must be an object or a string');
+		return "patchwork_{$class}_{$postfix}";
 	}
 	
 	protected function idUsed($id) {
@@ -55,7 +59,7 @@ abstract class Captcha extends Object {
 	abstract public function validate($value);
 	
 	public function getId($new = false) {
-		$key = $this->getSessionKey('Id');
+		$key = self::get_session_key('Id', $this);
 		$id = Session::get($key);
 		if (!$id || $new) {
 			do {

@@ -68,7 +68,7 @@ abstract class CaptchaWord extends Captcha {
 	}
 	
 	public function getWord($new = false) {
-		$key = $this->getSessionKey('Word');
+		$key = self::get_session_key('Word', $this);
 		$word = Session::get($key);
 		if (!$word || $new) {
 			$generator = $this->config()->generator;
