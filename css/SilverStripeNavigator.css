@@ -8,3 +8,7 @@
 #SilverStripeNavigator .holder {
 	padding: 4px 4px 0 4px;
 }
+
+#SilverStripeNavigatorMessage {
+	z-index: 32768;
+}
