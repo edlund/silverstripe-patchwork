@@ -25,7 +25,7 @@ call_user_func(function () {
 	if (Director::isLive() && substr_count($_SERVER['SERVER_NAME'], '.') == 1) {
 		Director::forceWWW();
 	}
-	if (PATCHWORK_SSL) {
+	if (defined(PATCHWORK_SSL) && PATCHWORK_SSL) {
 		Director::forceSSL();
 	}
 	Session::set_cookie_secure(PATCHWORK_COOKIE_SECURE);

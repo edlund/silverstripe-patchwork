@@ -40,7 +40,7 @@ root=$1
 name=$2
 port=$3
 vhost_dir="/etc/apache2/sites-available"
-vhost_file="${vhost_dir}/${name}"
+vhost_file="${vhost_dir}/${name}.conf"
 
 if [[ $port -ne 80 ]] ; then
 	listen="Listen $port"
@@ -67,3 +67,4 @@ sudo service apache2 reload
 
 echo "$0: added ${name}"
 echo "$0: remember to update your hosts file or add it to the DNS"
+

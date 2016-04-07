@@ -27,11 +27,22 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Example usage: site-rm.sh mysite.localhost
+# Example usage: site-rm.sh /var/www mysite.localhost
 
 set -e
+sudo true
 
-script_path=`readlink -f "$0"`
-script_dir=`dirname "${script_path}"`
+root=$1
+name=$2
+vhost_dir="/etc/apache2/sites-available"
+vhost_file="${vhost_dir}/${name}.conf"
 
-echo "$0: write me!"
+sudo a2disite "${name}"
+sudo service apache2 reload
+sudo rm "${vhost_file}"
+
+rm -rf "${root}/${name}"
+
+echo "$0: removed ${name}"
+echo "$0: remember to update your hosts file or remove it from the DNS"
+

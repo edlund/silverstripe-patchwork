@@ -64,15 +64,6 @@ sudo cp "${script_dir}/default.vhost" "/etc/apache2/sites-available/default"
 
 mkdir -p "${opt_webroot}/localhost/www"
 
-# FIXME: Better and/or Sane PEAR and PHPUnit handling.
-sudo pear upgrade PEAR
-sudo pear config-set auto_discover 1
-if [[ ! -d "/usr/share/php/PHPUnit" ]] ; then
-	sudo pear install pear.phpunit.de/PHPUnit
-else
-	sudo pear upgrade phpunit/PHPUnit
-fi
-
 sudo service apache2 restart
 
 "${script_dir}/site-mk.sh" "${opt_webroot}" "phpinfo.localhost" "64000"
@@ -92,3 +83,4 @@ fi
 "${script_dir}/site-mk.sh" "${opt_webroot}" "tmp.localhost" "80"
 
 exit 0
+
