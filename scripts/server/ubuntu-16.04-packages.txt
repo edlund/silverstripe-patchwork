@@ -1,0 +1,43 @@
+ant ant-optional
+apache2 libapache2-mod-php
+autoconf automake
+bzr bzrtools
+check
+clang
+cmake
+cvs
+doxygen
+fakeroot
+cpp g++ gcc gdb
+gcj-jdk
+gdebi
+gettext
+gimp
+git gitk
+gksu
+imagemagick
+llvm
+m4
+make
+mawk
+mercurial
+mysql-client
+mysql-common
+mysql-server
+openssh-client
+openssh-server
+openssl
+patch
+pep8
+php php-cli php-common php-curl php-xdebug php-dev php-gd php-geoip php-gmp php-imagick php-mcrypt php-mysql php-odbc php-pgsql php-sqlite3 php-tidy php-xmlrpc php-xsl php-pear
+postgresql
+pylint
+python python-dev
+python-beautifulsoup python-brlapi python-bzrlib python-crypto python-gobject python-gtk2 python-httplib2 python-libproxy python-libxml2 python-lxml python-mako python-markupsafe python-minimal python-notify python-numpy python-oauth python-openssl python-pycurl python-qt4 python-serial python-setuptools python-simplejson python-tk
+python-twisted-bin python-twisted-core python-twisted-names python-twisted-web
+ruby ruby-dev rubygems
+subversion
+tcl
+ufw
+valgrind
+
