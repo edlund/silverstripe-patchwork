@@ -36,6 +36,7 @@ python python-dev
 python-beautifulsoup python-brlapi python-bzrlib python-crypto python-gobject python-gtk2 python-httplib2 python-libproxy python-libxml2 python-lxml python-mako python-markupsafe python-minimal python-notify python-numpy python-oauth python-openssl python-pycurl python-qt4 python-serial python-setuptools python-simplejson python-tk
 python-twisted-bin python-twisted-core python-twisted-names python-twisted-web
 ruby ruby-dev rubygems
+scons
 subversion
 tcl
 ufw
