@@ -29,7 +29,7 @@ openssh-server
 openssl
 patch
 pep8
-php php-cli php-common php-curl php-xdebug php-dev php-gd php-geoip php-gmp php-imagick php-mcrypt php-mysql php-odbc php-pgsql php-sqlite3 php-tidy php-xmlrpc php-xsl php-pear
+php php-cli php-common php-curl php-xdebug php-dev php-gd php-geoip php-gmp php-imagick php-mbstring php-mcrypt php-mysql php-odbc php-pgsql php-sqlite3 php-tidy php-xmlrpc php-xsl php-pear
 postgresql
 pylint
 python python-dev
